@@ -1,6 +1,6 @@
 function stringIncludes(haystack, needle) {
   for (let i = 0; i < haystack.length; i++) {
-    if (haystack.slice(i, needle.length) === needle) {
+    if (haystack.slice(i, i + needle.length) === needle) {
       return true
     }
   }
@@ -10,13 +10,12 @@ function stringIncludes(haystack, needle) {
 
 function countLetter(haystack, needle) {
   let count = 0
+  for (let i = 0; i < haystack.length; i++) {
+    if (haystack.slice(i, i + needle.length) === needle) {
 
-  while (haystack.length) {
-    if (haystack.shift() === needle) {
       count++
     }
   }
-
   return count
 }
 
@@ -39,4 +38,5 @@ module.exports = {
   stringIncludes,
   countLetter,
   camelCase,
+
 }
