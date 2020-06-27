@@ -1,42 +1,40 @@
 function stringIncludes(haystack, needle) {
   for (let i = 0; i < haystack.length; i++) {
     if (haystack.slice(i, i + needle.length) === needle) {
-      return true
+      return true;
     }
   }
 
-  return false
+  return false;
 }
 
 function countLetter(haystack, needle) {
-  let count = 0
+  let count = 0;
   for (let i = 0; i < haystack.length; i++) {
     if (haystack.slice(i, i + needle.length) === needle) {
-
-      count++
+      count++;
     }
   }
-  return count
+  return count;
 }
 
 function camelCase(sentence) {
-  const arr = sentence.split(' ')
+  const arr = sentence.split(" ");
 
-  for (let i = 0; i < arr.length; i++) {
-    arr[i] = arr[i].toLowerCase()
+  for (let i = 1; i < arr.length; i++) {
+    arr[0] = arr[0].toLowerCase();
+    arr[i] = arr[i].toLowerCase();
+    const letters = arr[i].split("");
+    letters[0] = letters[0].toUpperCase();
 
-    const letters = arr[i].split('')
-    letters[0] = letters[0].toUpperCase()
-
-    arr[i] = letters.join('')
+    arr[i] = letters.join("");
   }
 
-  return arr.join('')
+  return arr.join("");
 }
 
 module.exports = {
   stringIncludes,
   countLetter,
   camelCase,
-
-}
+};

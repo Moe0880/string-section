@@ -27,19 +27,19 @@ describe('String Functions', () => {
   describe('camelCase', () => {
     it('returns the correct camel case name of a sentence when written in all lower case', () => {
       const cc = camelCase('get string from object')
-      expect(cc).to.equal('GetStringFromObject')
+      expect(cc).to.equal('getStringFromObject')
     })
     it('returns the correct camel case name of a sentence when written in all upper case', () => {
       const cc = camelCase('GET STRING FROM OBJECT')
-      expect(cc).to.equal('GetStringFromObject')
+      expect(cc).to.equal('getStringFromObject')
     })
     it('returns the correct camel case name of a sentence when written in title case', () => {
       const cc = camelCase('Get String From Object')
-      expect(cc).to.equal('GetStringFromObject')
+      expect(cc).to.equal('getStringFromObject')
     })
     it('returns the correct camel case name of a sentence when written in crazy case', () => {
       const cc = camelCase('GeT stRIng FroM ObJeCt')
-      expect(cc).to.equal('GetStringFromObject')
+      expect(cc).to.equal('getStringFromObject')
     })
   })
 })
